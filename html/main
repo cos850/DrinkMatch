@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head></head>
+  <body>
+    <div id="start">
+        <h1>꽃구름 메뉴 테스트</h1>
+        <p class="px-3">
+          당신에게 어울리는 꽃구름 카페의 음료틑 추천해드릴게요<br>
+          테스트를 시작해보세요
+        </p>
+        <p>
+          <button onclick="start()" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Start</button>
+        </p>
+    </div>
+  </body>
+</html>

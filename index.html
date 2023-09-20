@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="ko" class="h-100">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,32 +63,50 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
+    <link href="./css/cover.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/consts.js"></script>
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
           <h3 class="float-md-start mb-0">꽃구름</h3>
-          <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
-          </nav> -->
         </div>
       </header>
 
-      <main id="main">
-        <div id="start">
-            <h1>꽃구름 메뉴 테스트</h1>
-            <p class="px-3">
-              당신에게 어울리는 꽃구름 카페의 음료틑 추천해드릴게요<br>
-              테스트를 시작해보세요
-            </p>
-            <p>
-              <button onclick="start()" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Start</button>
-            </p>
+      <main id="root">
+        <div id="main">
+          <h1>꽃구름 메뉴 테스트</h1>
+          <p class="px-3">
+            당신에게 어울리는 꽃구름 카페의 음료틑 추천해드릴게요<br>
+            테스트를 시작해보세요!
+          </p>
+          <p>
+            <button onclick="showTest()" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Start</button>
+          </p>
+        </div>
+
+        <div id="test">
+          <div class="contents">
+            <p id="question" class="px-3"></p>
+            <div id="choice-group">
+              <button onclick="choice(1)" class="btn btn-secondary fw-bold border-white bg-white"></button>
+              <button onclick="choice(2)" class="btn btn-secondary fw-bold border-white bg-white"></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="result">
+          <div class="contents">
+              <p>당신의 추천 메뉴는 <sapn class="h1"></sapn>입니다.</p>
+              <p class="px-3"></p>
+              <p>
+                  <button onclick="location.reload();" class="btn btn-lg btn-secondary fw-bold border-white bg-white">다시하기</button>
+                  <button onclick="share()" class="btn btn-lg btn-secondary fw-bold border-white bg-white">공유하기</button>
+              </p>
+          </div>
         </div>
       </main>
 
@@ -99,6 +117,11 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+      $(function(){ // Dom이 로드되면 실행
+        showMain();
+      });
+    </script>
   </body>
 </html>
