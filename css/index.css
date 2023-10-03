@@ -1,12 +1,12 @@
-#test {
+/* #test {
     background-image: url(../img/bg1.jpg);
     background-repeat : no-repeat;
     background-size : cover;
     min-height: 500px;
     position:relative;
-}
+} */
 
-.contents {
+/* .contents {
     position:absolute;
     top:50%;
     left:50%;
@@ -15,4 +15,4 @@
 
 .contents p {
     color:black;
-}
+} */
