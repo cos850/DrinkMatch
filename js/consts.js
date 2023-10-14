@@ -1,8 +1,13 @@
 const tests = [
-    {type: 'EI', question: `외향형(E) vs 내향형(I) 테스트 질문`, answers: [{type: 'I', text: 'Introversion'}, {type: 'E', text: 'Extroversion'}]},
-    {type: 'SN', question: `감각형(S) vs 직관형(N) 테스트 질문`, answers: [{type: 'S', text: 'Sensing'}, {type: 'N', text: 'iNtuition'}]},
-    {type: 'TF', question: `사고형(T) vs 감정형(F) 테스트 질문`, answers: [{type: 'F', text: 'Feeling'}, {type: 'T', text:'Thinking'}]},
-    {type: 'JP', question: `판단형(J) vs 인식형(P) 테스트 질문`, answers: [{type: 'P', text: 'Perceiving'}, {type: 'J', text: 'Judging'}]}
+    // {type: 'EI', question: '외향형(E) vs 내향형(I) 테스트 질문. 외향형(E) vs 내향형(I) 테스트 질문. 외향형(E) vs 내향형(I) 테스트 질문.', answers: [{type: 'I', text: 'Introversion'}, {type: 'E', text: 'Extroversion'}]},
+    // {type: 'SN', question: '감각형(S) vs 직관형(N) 테스트 질문. 감각형(S) vs 직관형(N) 테스트 질문. 감각형(S) vs 직관형(N) 테스트 질문.', answers: [{type: 'S', text: 'Sensing'}, {type: 'N', text: 'iNtuition'}]},
+    // {type: 'TF', question: '사고형(T) vs 감정형(F) 테스트 질문. 사고형(T) vs 감정형(F) 테스트 질문. 사고형(T) vs 감정형(F) 테스트 질문.', answers: [{type: 'F', text: 'Feeling'}, {type: 'T', text:'Thinking'}]},
+    // {type: 'JP', question: '판단형(J) vs 인식형(P) 테스트 질문. 판단형(J) vs 인식형(P) 테스트 질문. 판단형(J) vs 인식형(P) 테스트 질문.', answers: [{type: 'P', text: 'Perceiving'}, {type: 'J', text: 'Judging'}]},
+
+    {type: 'EI', question: '자주 가던 카페에 간 우리 <br> 사장님이 아는척하며 말을 걸어온다', answers: [{type: 'I', text: '불편하지만 티 내지 않고 받아준다'}, {type: 'E', text: '알아봐 주다니! 대화를 이어간다'}]},
+    {type: 'JP', question: '사장님이 메뉴를 추천해 줬다 <br> 이때 나는?', answers: [{type: 'P', text: '한 번 먹어본다'}, {type: 'J', text: '원래 먹으려던걸 시킨다'}]},
+    {type: 'SN', question: '같이 간 친구가 뒤 테이블 의자가 혼자 움직였다고 한다', answers: [{type: 'S', text: '잘못봤나보네'}, {type: 'N', text: '어떤 의자가 움직였는데?'}]},
+    {type: 'TF', question: '사장님이 솔직하게 음료가 어땠냐고 묻는다 <br> 음료는 맛이 없었다', answers: [{type: 'F', text: '사장님 앞에서 도저히 말할 수 없어서 둘러댄다'}, {type: 'T', text:'사장님을 위해 솔직히 피드백 해준다'}]},
 ];
 
 const results = [
@@ -88,13 +93,11 @@ const results = [
     }
 ]
 
-function findResult(mbti){
+function findResult(mbti) {
     const resultType = (mbti.E > mbti.I ? 'E' : 'I') 
         + (mbti.N > mbti.S ? 'N' : 'S')
         + (mbti.F > mbti.T ? 'F' : 'T')
         + (mbti.J > mbti.P ? 'J' : 'P');
 
-        console.log('result: ' + resultType);
-    
     return results.find(ele=>ele.type === resultType);
 }

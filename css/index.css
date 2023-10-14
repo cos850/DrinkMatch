@@ -1,18 +1,99 @@
-/* #test {
-    background-image: url(../img/bg1.jpg);
-    background-repeat : no-repeat;
-    background-size : cover;
-    min-height: 500px;
-    position:relative;
-} */
-
-/* .contents {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+/**
+    font
+*/
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.contents p {
-    color:black;
-} */
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+    element
+*/
+body {
+    font-family: 'omyu_pretty';
+    font-size: 15pt;
+}
+
+h1 {
+    font-family: 'KCC-Ganpan';
+    font-size: 40px;
+    text-shadow: 0 .05rem .1rem rgba(22, 22, 22, 0.5);
+}
+
+/**
+    id
+*/
+#main {
+    background-image: url(../img/main_noText.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    
+    /** 자식요소 중앙정렬 */
+    height: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+#main h1 {
+    position: fixed;
+    top: 255px;
+    color: white;
+}
+
+/**
+    class
+*/
+.main-btn{
+    font-family: 'KCC-Ganpan';
+    color: white;
+    background-color: #BEADFA;
+    text-shadow: 0 .05rem .1rem rgba(22, 22, 22, 0.5);
+    border: none;
+}
+
+.main-btn:hover{
+    background-color: #F4ECF7;
+    color: white;
+}
+
+.main-btn-position {
+    width: 120px;
+    position: fixed;
+    top: 450px;
+}
+
+.question {
+    /** 수직 중앙 정렬 */
+    padding: 100px 0;
+}
+
+.answer-btn {
+    background-color: white;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.answer-btn:hover {
+    background-color: #FFE5F1;
+}
+
+.bg-test {
+    background-color: #d4eeff;
+}
+
+.contents{
+    min-height: 200px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
