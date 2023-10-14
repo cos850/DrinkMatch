@@ -21,16 +21,21 @@ $(function(){   // DOM 로드 완료되면 실행
 
             $question.html(testObj.question);
 
-            const $btn0 = $choiceGroup.children("button").eq(0);
-            const $btn1 = $choiceGroup.children("button").eq(1);
+            $('.answer-btn').remove();
 
-            $btn0.text(testObj.answers[0].text)
+            const $btn0 = $('<button />').addClass('btn btn-secondary fw-bold answer-btn')
+                .text(testObj.answers[0].text)
                 .off('click')
                 .on('click', ()=>choice(testObj.answers[0].type));
+
+                console.dir($btn0)
             
-            $btn1.text(testObj.answers[1].text)
+            const $btn1 = $('<button />').addClass('btn btn-secondary fw-bold answer-btn')
+                .text(testObj.answers[1].text)
                 .off('click')
                 .on('click', ()=>choice(testObj.answers[1].type));
+
+            $choiceGroup.append($btn0).append($('<br />')).append($btn1);
         } 
     }
 
@@ -56,6 +61,12 @@ $(function(){   // DOM 로드 완료되면 실행
 
 function restart(){
     location.href='/index.html';
+}
+
+function share(){
+    navigator.clipboard.writeText(location.protocol + "//" + location.host).then(()=>{
+        alert('복사되었습니다.');
+    });
 }
 
 
